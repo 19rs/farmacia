@@ -1,19 +1,28 @@
-const express = require('express');
-const server = express();
-const dados = require("./DATA/dados.json")
-const fs = require("fs");
+const express = require('express')
+const server = express()
+const clientesRouter = require('./controllerClientes')
+const fornecedoresRouter = require('./controllerFornecedores')
+const medicamentosRouter = require('./controllerMedicamentos')
+const vendasRouter = require('./controllerVendas')
+const fs = require('fs')
+const cors = require('cors')
 
-// server.get('/', (req, res) => {
-//     return res.json({mensagem: 'Nossa API está funcionando'});
-// });
-
+// função para utilizar o servidor
 server.use(express.json())
+server.use(cors())
 
-server.listen(3000, () => {
-    console.log("Servidor está funcionando!");
-});
+server.use('/api', clientesRouter.server)
+server.use('/api', fornecedoresRouter.server)
+server.use('/api', medicamentosRouter.server)
+server.use('/api', vendasRouter.server)
+
+// mensagem no terminal para indicar o funcionamento
+server.listen(3000, () =>{
+    console.log(`O servidor está funcionando! :D`);
+})
 
 
+/*
 //CRUD Medicamentos:
 server.post("/medicamentos", (req, res) => {
     const novoMedicamento = req.body
@@ -202,7 +211,7 @@ server.delete("/vendas/:id", (req, res) => {
 function salvarDados() {
     fs.writeFileSync(__dirname + "/DATA/dados.json", JSON.stringify(dados, null, 2))
 }
-
+*/
 
 
 
