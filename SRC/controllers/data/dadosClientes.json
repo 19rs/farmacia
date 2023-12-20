@@ -5,28 +5,90 @@
       "nome": "Cliente 1",
       "endereco": "End 1",
       "email": "email1@gmail.com",
-      "Telefone": "3592-0101"
+      "telefone": "3592-0101",
+      "_links": {
+        "self": {
+          "href": "/clientes/1"
+        },
+        "update": {
+          "href": "/clientes/1/update"
+        },
+        "delete": {
+          "href": "/clientes/1/delete"
+        }
+      }
     },
     {
-      "id": "2",
+      "id": 2,
       "nome": "Cliente 2",
       "endereco": "End 2",
       "email": "email2@gmail.com",
-      "telefone": "3592-0202"
+      "telefone": "3592-0202",
+      "_links": {
+        "self": {
+          "href": "/clientes/2"
+        },
+        "update": {
+          "href": "/clientes/2/update"
+        },
+        "delete": {
+          "href": "/clientes/2/delete"
+        }
+      }
     },
     {
-      "id": "3",
+      "id": 3,
       "nome": "Cliente 3",
       "endereco": "End 3",
       "email": "email3@gmail.com",
-      "telefone": "3592-0303"
+      "telefone": "3592-0303",
+      "_links": {
+        "self": {
+          "href": "/clientes/3"
+        },
+        "update": {
+          "href": "/clientes/3/update"
+        },
+        "delete": {
+          "href": "/clientes/3/delete"
+        }
+      }
     },
     {
-      "id": "4",
+      "id": 4,
       "nome": "Cliente 4",
       "endereco": "End 4",
       "email": "email4@gmail.com",
-      "telefone": "3592-0404"
+      "telefone": "3592-0404",
+      "_links": {
+        "self": {
+          "href": "/clientes/4"
+        },
+        "update": {
+          "href": "/clientes/4/update"
+        },
+        "delete": {
+          "href": "/clientes/4/delete"
+        }
+      }
+    },
+    {
+      "id": "5",
+      "nome": "Cliente 5",
+      "endereco": "End 5",
+      "email": "email5@gmail.com",
+      "telefone": "3592-0505",
+      "_links": {
+        "self": {
+          "href": "/api/clientes/5"
+        },
+        "update": {
+          "href": "/api/clientes/5/update"
+        },
+        "delete": {
+          "href": "/api/clientes/5/delete"
+        }
+      }
     }
   ]
 }

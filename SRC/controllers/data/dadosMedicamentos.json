@@ -5,28 +5,90 @@
       "nome": "Medicamento 1",
       "fabricante": "Fabricante Medicamento 1",
       "preco": "10.00",
-      "quantidade": 10
+      "quantidade": 10,
+      "_links": {
+        "self": {
+          "href": "/medicamentos/1"
+        },
+        "update": {
+          "href": "/medicamentos/1/update"
+        },
+        "delete": {
+          "href": "/medicamentos/1/delete"
+        }
+      }
     },
     {
       "id": "2",
       "nome": "Medicamento 2",
       "fabricante": "Fabricante Medicamento 2",
       "preco": "20.00",
-      "quantidade": 20
+      "quantidade": 20,
+      "_links": {
+        "self": {
+          "href": "/medicamentos/2"
+        },
+        "update": {
+          "href": "/medicamentos/2/update"
+        },
+        "delete": {
+          "href": "/medicamentos/2/delete"
+        }
+      }
     },
     {
       "id": "3",
       "nome": "Medicamento 3",
       "fabricante": "Fabricante Medicamento 3",
       "preco": "30.00",
-      "quantidade": 30
+      "quantidade": 30,
+      "_links": {
+        "self": {
+          "href": "/medicamentos/3"
+        },
+        "update": {
+          "href": "/medicamentos/3/update"
+        },
+        "delete": {
+          "href": "/medicamentos/3/delete"
+        }
+      }
     },
     {
       "id": "4",
       "nome": "Medicamento 4",
       "fabricante": "Fabricante Medicamento 4",
       "preco": "40.00",
-      "quantidade": "40"
+      "quantidade": "40",
+      "_links": {
+        "self": {
+          "href": "/medicamentos/4"
+        },
+        "update": {
+          "href": "/medicamentos/4/update"
+        },
+        "delete": {
+          "href": "/medicamentos/4/delete"
+        }
+      }
+    },
+    {
+      "id": "5",
+      "nome": "Medicamento 5",
+      "fabricante": "Fabricante Medicamento 5",
+      "preco": "50.00",
+      "quantidade": "50",
+      "_links": {
+        "self": {
+          "href": "/medicamentos/5"
+        },
+        "update": {
+          "href": "/medicamentos/5/update"
+        },
+        "delete": {
+          "href": "/medicamentos/5/delete"
+        }
+      }
     }
   ]
 }

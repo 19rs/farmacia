@@ -13,6 +13,13 @@ server.post('/fornecedores', (req, res) => {
     if(!novoFornecedor.nome || !novoFornecedor.endereco || !novoFornecedor.telefone) {
         return res.status(400).json({mensagem: "Dados incompletos, tente novamente"})
     } else {
+
+        novoFornecedor._links = {
+            self: { href: `/fornecedores/${novoFornecedor.id}` },
+            update: { href: `/fornecedores/${novoFornecedor.id}/update` },
+            delete: { href: `/fornecedores/${novoFornecedor.id}/delete` }
+        };
+
         dadosFornecedores.Fornecedor.push(novoFornecedor)
         salvarDados(dadosFornecedores)
         return res.status(201).json({mensagem: "Novo fornecedor cadastrado com sucesso!"})
@@ -24,6 +31,20 @@ server.get('/fornecedores', (req, res) => {
     return res.json(dadosFornecedores.Fornecedor)
 })
 
+server.get('/fornecedores/:id', (req, res) => {
+    
+    const fornecedorId = parseInt(req.params.id)
+
+    const fornecedor = dadosFornecedores.Fornecedor.find(f => parseInt(f.id) === fornecedorId)
+
+    if (!fornecedor) {
+        return res.status(404).json({mensagem: "Fornecedor não encontrado :/"})
+    }
+    
+    return res.json(fornecedor);
+})
+
+/*
 // função para atualizar um usuario
 server.put('/fornecedores/:id', (req, res) => {
     //buscar e transformar o id do endpoint em inteiro
@@ -63,6 +84,7 @@ server.delete("/clientes/:id", (req, res) => {
 
     return res.status(200).json({mensagem: "Usuário excluido com sucesso"})
 })
+*/
 
 function salvarDados(){
     fs.writeFileSync(__dirname + '/data/dadosFornecedores.json', JSON.stringify(dadosFornecedores, null, 2))

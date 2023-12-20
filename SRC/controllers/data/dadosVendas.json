@@ -4,25 +4,86 @@
       "id": 1,
       "data": "2023-11-23",
       "id_medicamento": "1",
-      "id_cliente": "1"
+      "id_cliente": "1",
+      "_links": {
+        "self": {
+          "href": "/vendas/1"
+        },
+        "update": {
+          "href": "/vendas/1/update"
+        },
+        "delete": {
+          "href": "/vendas/1/delete"
+        }
+      }
     },
     {
       "id": "2",
       "data": "2023-11-11",
       "id_medicamento": "2",
-      "id_cliente": "2"
+      "id_cliente": "2",
+      "_links": {
+        "self": {
+          "href": "/vendas/2"
+        },
+        "update": {
+          "href": "/vendas/2/update"
+        },
+        "delete": {
+          "href": "/vendas/2/delete"
+        }
+      }
     },
     {
       "id": "3",
       "data": "2023-12-11",
       "id_medicamento": "3",
-      "id_cliente": "3"
+      "id_cliente": "3",
+      "_links": {
+        "self": {
+          "href": "/vendas/3"
+        },
+        "update": {
+          "href": "/vendas/3/update"
+        },
+        "delete": {
+          "href": "/vendas/3/delete"
+        }
+      }
     },
     {
       "id": "4",
       "data": "2023-12-05",
       "id_medicamento": "4",
-      "id_cliente": "4"
+      "id_cliente": "4",
+      "_links": {
+        "self": {
+          "href": "/vendas/4"
+        },
+        "update": {
+          "href": "/vendas/4/update"
+        },
+        "delete": {
+          "href": "/vendas/4/delete"
+        }
+      }
+    },
+    {
+      "id": "5",
+      "data": "2023-12-19",
+      "id_medicamento": "5",
+      "id_cliente": "5",
+      "_links": {
+        "self": {
+          "href": "/vendas/5"
+        },
+        "update": {
+          "href": "/vendas/5/update"
+        },
+        "delete": {
+          "href": "/vendas/5/delete"
+        }
+      }
     }
   ]
 }

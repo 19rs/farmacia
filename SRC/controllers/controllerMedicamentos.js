@@ -13,6 +13,13 @@ server.post('/medicamentos', (req, res) => {
     if(!novoMedicamento.nome || !novoMedicamento.fabricante || !novoMedicamento.preco || !novoMedicamento.quantidade) {
         return res.status(400).json({mensagem: "Dados incompletos, tente novamente"})
     } else {
+
+        novoMedicamento._links = {
+            self: { href: `/medicamentos/${novoMedicamento.id}` },
+            update: { href: `/medicamentos/${novoMedicamento.id}/update` },
+            delete: { href: `/medicamentos/${novoMedicamento.id}/delete` }
+        };
+
         dadosMedicamentos.Medicamento.push(novoMedicamento)
         salvarDados(dadosMedicamentos)
         return res.status(201).json({mensagem: "Novo medicamento cadastrado com sucesso!"})
@@ -24,6 +31,20 @@ server.get('/medicamentos', (req, res) => {
     return res.json(dadosMedicamentos.Medicamento)
 })
 
+server.get('/medicamentos/:id', (req, res) => {
+    
+    const medicamentoId = parseInt(req.params.id)
+
+    const medicamento = dadosMedicamentos.Medicamento.find(m => parseInt(m.id) === medicamentoId)
+
+    if (!medicamento) {
+        return res.status(404).json({mensagem: "Medicamento não encontrado :/"})
+    }
+    
+    return res.json(medicamento);
+})
+
+/*
 // função para atualizar um medicamento
 server.put('/medicamentos/:id', (req, res) => {
     const medicamentoId = parseInt(req.params.id)
@@ -53,6 +74,7 @@ server.delete("/medicamentos/:id", (req, res) => {
 
     return res.status(200).json({mensagem: "Medicamento excluido com sucesso"})
 })
+*/
 
 function salvarDados(){
     fs.writeFileSync(__dirname + '/data/dadosMedicamentos.json', JSON.stringify(dadosMedicamentos, null, 2))

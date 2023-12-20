@@ -4,25 +4,86 @@
       "id": 1,
       "nome": "Fornecedor 1",
       "endereco": "End Fornecedor 1",
-      "telefone": "3592-1111"
+      "telefone": "3592-1111",
+      "_links": {
+        "self": {
+          "href": "/fornecedores/1"
+        },
+        "update": {
+          "href": "/fornecedores/1/update"
+        },
+        "delete": {
+          "href": "/fornecedores/1/delete"
+        }
+      }
     },
     {
       "id": 2,
       "nome": "Fornecedor 2",
       "endereco": "End Fornecedor 2",
-      "telefone": "3592-2222"
+      "telefone": "3592-2222",
+      "_links": {
+        "self": {
+          "href": "/fornecedores/2"
+        },
+        "update": {
+          "href": "/fornecedores/2/update"
+        },
+        "delete": {
+          "href": "/fornecedores/2/delete"
+        }
+      }
     },
     {
-      "id": "3",
+      "id": 3,
       "nome": "Fornecedor 3",
       "endereco": "End Fornecedor 3",
-      "telefone": "3592-3333"
+      "telefone": "3592-3333",
+      "_links": {
+        "self": {
+          "href": "/fornecedores/3"
+        },
+        "update": {
+          "href": "/fornecedores/3/update"
+        },
+        "delete": {
+          "href": "/fornecedores/3/delete"
+        }
+      }
     },
     {
-      "id": "4",
+      "id": 4,
       "nome": "Fornecedor 4",
       "endereco": "End Fornecedor 4",
-      "telefone": "3592-4444"
+      "telefone": "3592-4444",
+      "_links": {
+        "self": {
+          "href": "/fornecedores/4"
+        },
+        "update": {
+          "href": "/fornecedores/4/update"
+        },
+        "delete": {
+          "href": "/fornecedores/4/delete"
+        }
+      }
+    },
+    {
+      "id": "5",
+      "nome": "Fornecedor 5",
+      "endereco": "End Fornecedor 5",
+      "telefone": "3592-5555",
+      "_links": {
+        "self": {
+          "href": "/fornecedores/5"
+        },
+        "update": {
+          "href": "/fornecedores/5/update"
+        },
+        "delete": {
+          "href": "/fornecedores/5/delete"
+        }
+      }
     }
   ]
 }

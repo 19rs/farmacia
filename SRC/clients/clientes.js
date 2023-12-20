@@ -54,3 +54,22 @@ function displayClientesList(data) {
         listaClientes.appendChild(listItem)
     })
 }
+
+function loadClientePorID(id) {
+
+const url = `http://localhost:3000/api/clientes/${clienteId}`;
+    
+    fetch(url)
+        .then(response => response.json())
+        .then(data => displayCliente(data))
+        .catch(error => console.error("Erro:", error));
+}
+
+function displayCliente(cliente) {
+    const listaClientes = document.getElementById('listaClientes');
+    listaClientes.innerHTML = '';
+
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `<b>ID:</b> ${cliente.id} <br> <b>Nome:</b> ${cliente.nome} <br> <b>Email:</b> ${cliente.email} <br> <b>Endereço:</b> ${cliente.endereco} <br> <b>Telefone:</b> ${cliente.telefone}`;
+    listaClientes.appendChild(listItem);
+}

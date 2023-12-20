@@ -13,6 +13,13 @@ server.post('/clientes', (req, res) => {
     if(!novoCliente.nome || !novoCliente.endereco || !novoCliente.email || !novoCliente.telefone) {
         return res.status(400).json({mensagem: "Dados incompletos, tente novamente"})
     } else {
+
+        novoCliente._links = {
+            self: { href: `/clientes/${novoCliente.id}` },
+            update: { href: `/clientes/${novoCliente.id}/update` },
+            delete: { href: `/clientes/${novoCliente.id}/delete` }
+        };
+
         dadosClientes.Cliente.push(novoCliente)
         salvarDados(dadosClientes)
         return res.status(201).json({mensagem: "Novo cliente cadastrado com sucesso!"})
@@ -24,6 +31,21 @@ server.get('/clientes', (req, res) => {
     return res.json(dadosClientes.Cliente)
 })
 
+server.get('/clientes/:id', (req, res) => {
+    
+    const clienteId = parseInt(req.params.id)
+
+    const cliente = dadosClientes.Cliente.find(c => parseInt(c.id) === clienteId)
+
+    if (!cliente) {
+        return res.status(404).json({mensagem: "Cliente não encontrado :/"})
+    }
+    
+    //console.log(cliente)
+    return res.json(cliente);
+})
+
+/*
 // função para atualizar um usuario
 server.put('/clientes/:id', (req, res) => {
     //buscar e transformar o id do endpoint em inteiro
@@ -63,6 +85,7 @@ server.delete("/clientes/:id", (req, res) => {
 
     return res.status(200).json({mensagem: "Usuário excluido com sucesso"})
 })
+*/
 
 function salvarDados(){
     fs.writeFileSync(__dirname + '/data/dadosClientes.json', JSON.stringify(dadosClientes, null, 2))
